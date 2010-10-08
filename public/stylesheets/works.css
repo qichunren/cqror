@@ -1,0 +1,112 @@
+*,html{margin:0;padding:0}
+body {margin-bottom:40px;background-color: #fff;color: #333;background:#E7F1FD url(../images/header-bg.png) repeat-x; }
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:13px;line-height:18px;
+}
+ol,ul{list-style-image:none;list-style-position:outside;list-style-type:none;}
+a{color:#000;}
+a:visited {color:#666;}
+a:hover{color:#BDBDBD;}
+.wrap{text-align:center;}
+.clear{clear:both;height:1px;}
+#header{color:#F7F7F7;height:60px;
+    margin:0 auto;padding-bottom:0;
+    padding-top:1px;position:relative;
+    width:1054px;
+}
+#header h1{float:left;display:block;line-height:60px;}
+.nav ul {
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    background-color:#FFFFFF;float:right;line-height:2.4em;margin:14px 8px;padding:0 12px 0 0;
+}
+.nav li {float:left;margin:0;padding:0 0 0 12px;}
+.nav a{font-weight:bold;color:#0350A6;text-decoration:none;}
+.nav a:hover{color:#0350A6;text-decoration:underline;}
+.nav a:visited{color:#0350A6;}
+#splash{background: url(../images/public-splash.png) repeat-x;height:453px;}
+#splash .wrap{
+    margin:0 auto;
+    padding-bottom:0;
+    padding-top:1px;
+    position:relative;
+    width:1054px;
+    text-align:center;
+}
+#title-bar{background:url(../images/public-background-sign-up-bar.png) repeat-x;border-bottom:1px solid #7197C2;color:#003269;}
+#title-bar .wrap{
+    margin:0 auto;    padding-bottom:10px;
+    padding-top:10px;    width:785px;
+    text-align:left;    font-weight:bold;
+}
+#title-bar h3{width:618px;height:45px;font-size:0px;color:#AED3FE;
+margin-left:5px;background:url(../images/work-slogan.png) no-repeat;*background:url(../images/work-slogan-ie.jpg) no-repeat;}
+
+#our_works{background:url(/images/public-background-video-bar.png) repeat-x;text-align:center;}
+#our_works .wrap{padding:30px;height:200px;}
+#our_works a{color:#FFF;}
+#main{background:url(/images/public-background-main-content.png) repeat-x;}
+#main .wrap{margin:0 auto;width:960px;padding:20px;}
+#about{width:554px;float:left;}
+#team{
+        float:right;
+margin-bottom:15px;
+padding:10px 10px 10px 25px;
+position:relative;
+width:337px;text-align:left;
+        background:transparent url(../images/background-teammembers-container.png) no-repeat scroll left top;*background:transparent url(../images/background-teammembers-container-ie.jpg) no-repeat scroll left top;}
+#team-bottom{
+bottom:-15px;
+height:15px;
+left:0;
+position:absolute;
+width:373px;
+    background:transparent url(../images/background-teammembers-container-bottom.png) no-repeat scroll left bottom;
+    *background:transparent url(../images/background-teammembers-container-bottom-ie.jpg) no-repeat scroll left bottom;
+    }
+#team h3{margin-bottom:5px;color:#0350A6;}
+#team li img{float:left;border:1px solid #BDBDBD;padding:1px;}
+#team li{
+    clear:both;
+padding-bottom:15px;
+padding-top:15px;
+        background:transparent url(../images/background-quote-line.png) repeat-x scroll center top;}
+#team li:last-child {
+padding-bottom:0;
+}
+#team li div{float:left;
+margin-left:10px;
+width:270px;}
+#team li p{color:#323F50;
+font-size:14px;
+line-height:18px;
+text-shadow:0 1px 0 #E8F2FE;}
+#team span{-x-system-font:none;
+color:#032C64;
+display:block;
+font-family:"Lucida Grande";
+font-size:12px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+margin-top:8px;
+text-align:right;
+text-shadow:0 1px 0 #E8F2FE;}
+#team span a{color:#034B9D;
+font-weight:bold;
+text-decoration:none;}
+
+#footer{}
+#footer .wrap{width:960px;height:51px;
+    background:transparent url(../images/background-footer-bar.png) no-repeat scroll left top;
+    margin:20px auto 0;padding:17px;text-align:left;color:#0350A6;
+}
+#home_slogan{margin-top:110px;text-align:center;height:190px;}
+.slogan1{background:url(../images/slogan1.jpg) no-repeat 90px 0px;}
+.slogan2{background:url(../images/slogan1-m.jpg) no-repeat 91px 0px;}

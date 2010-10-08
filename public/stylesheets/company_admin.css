@@ -1,0 +1,41 @@
+.clear{clear:both;height:0px;}
+/*表格列表*/
+table.grid{margin-bottom: 20px;width:95%;border:1px solid gray;}
+table.grid  th{border:0;font-weight:bold;color:gray;background:#BDBDBD}
+table.grid  td{border-bottom:1px dashed #DDDDDD;padding:5px 0;border-top:0;border-left:0;border-right:0}
+table.grid .num-center{text-align:center}
+table.grid .time{color:#666666;text-align:right}
+
+
+th.number,td.number{width:60px;text-align:center;}
+th.operation,td.operation{width:80px;text-align:center;}
+body{background:#75838B;color:#2A343A;}
+
+.container{
+background:#FFFFFF none repeat scroll 0 0;
+margin:0 auto;
+position:relative;}
+
+#header,#footer{clear:both;}
+#header{height:48px;border-bottom:2px solid #226666;}
+h1#logo{}
+
+
+#nav_menu{background:#009999;}
+#nav_menu li{display:block;}
+#nav_menu a{display:block;padding:8px;color:#FFF;font-size:170%;font-weight:bold;}
+
+
+
+
+
+#footer{border-top:5px solid #D0D9DF;position:relative;padding-bottom:6px;}
+#footer p{margin:0;padding:12px;}
+
+/********************Begin:Will pagnate 分页样式**************************/
+div.pagination{padding: 3px;margin: 3px;float:right;}
+div.pagination a{color: #003399;padding: 2px 5px 2px 5px;margin: 2px;border: 1px solid #B6C5F2;text-decoration: none;}
+div.pagination a:hover, div.pagination a:active{border: 1px solid #B6C5F2;background:#DDFFDD;color: green;}
+div.pagination span.current{padding: 2px 5px 2px 5px;margin: 2px;border: 1px solid #B6C5F2;font-weight: bold;background-color: #DDFFDD;color: green;}
+div.pagination span.disabled{padding: 2px 5px 2px 5px;margin: 2px;border: 1px solid #B6C5F2;color: #678ACF;}
+/********************End:Will pagnate 分页样式**************************/
