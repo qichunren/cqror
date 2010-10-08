@@ -1,7 +1,6 @@
 Cqror::Application.routes.draw do
+  match 'contact-us' => "pages#contact"
   root :to => "welcome#index"
-
-  get "welcome/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
