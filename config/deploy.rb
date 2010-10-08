@@ -32,4 +32,12 @@ namespace :deploy do
     run "cp /home/qichunren/conf/database.yml #{current_path}/config/database.yml"
   end
 
+  task :stop do
+    run "cd /home/qichunren/www/cqror/current;thin stop"
+  end
+
+  task :start do
+    run "/usr/local/rvm/gems/ruby-1.9.2-p0/bin/thin start -C /etc/thin/cqror.yml"
+  end
+
 end
