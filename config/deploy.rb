@@ -33,7 +33,7 @@ namespace :deploy do
   end
 
   task :stop do
-    run "cd /home/qichunren/www/cqror/current;thin stop"
+    run "cd /home/qichunren/www/cqror/current;/usr/local/rvm/gems/ruby-1.9.2-p0/bin/thin stop"
   end
 
   task :start do
