@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title><%= yield(:title) || '蕲春人的博客'%></title>
+
+    <%= yield(:description)%><%= yield(:keywords)%>
+
+    <%= stylesheet_link_tag 'myblog/style.css'%>
+    <% #= auto_discovery_link_tag(:rss, {:controller => "/myblog/home", :action => 'rss'} ) %>
+  </head>
+  <body>
+    <div id="header">
+      <h1><a href='/myblog'>蕲春人的博客</a></h1>
+      <div class='nav'>
+        <ul>
+          <li><%= link_to "博客", "/myblog"%></li>
+          <li><a href ="/myblog/links.html">链接</a></li>
+          <li><a href ="/myblog/about.html">关于</a></li>
+        </ul>
+      </div>
+    </div><!--end:header-->
+    <div id="tagline"><p>记录我的生活轨迹.关注Ruby,电子商务，移动开发</p></div>
+
+    <div id="mainpage">
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="sidebar">
+        <div class="sidemain">
+          <ul>
+            <li>
+              <% if is_admin? %>
+                <div>
+                  <% #= link_to image_tag("create_new_post.gif", :alt => "发表新日志"), new_myblog_post_path, :title => "发表新日志"  %>
+                  <% #= link_to "删除缓存", :controller => "/myblog/home", :action => "expire_all_cache" %>
+                </div>
+              <% end %>
+              <div>
+                <% #=link_to image_tag("rss.png"), myblog_rss_url, :title => "蕲春人的博客RSS" %>
+                <% form_tag "/myblog/search", :method => :get do %>
+                  <%=text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
+                <% end %>
+              </div>
+
+              <div>
+                <h3>我是谁？</h3>
+                <%  image_tag "me1.jpg", :style => "margin-right:8px;width:70px;height:70px;float:left;display:none"%>我是qichunren(蕲春人)，我用我喜欢的Ruby On Rails技术开发我喜欢的WEB应用，如果你需要做网站，请联系我。
+              </div>
+              <%= yield :sidebar %>           
+
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <ul>
+        <li>蕲春人的博客 Developed with Ruby On Rails 2.3</li>
+        <% unless logged_in? %><li><a href="/myblog/sessions/new">管理</a></li><% end %>
+        <% if logged_in? %>
+          <li><a href="/myblog/sessions/destroy">退出</a></li>
+        <% end %>
+        <li><!--Blogsimplified Theme--></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <%= javascript_include_tag "jquery.validate.pack", "jquery.validate.messages_cn" %>
+    <%= yield :body_footer %>
+    <%= google_analytics %>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<div class="post">
+  <% @page_description = truncate(strip_tags(@post.content),:length => 80, :omission => "") %>
+    <h2 class="storytitle">
+        <%=link_to @post.title, @post, :title => @post.title %>
+          </h2>
+
+            <div class="meta">
+                at <%= @post.created_at.to_s(:db) %>
+                                      </div>
+
+                                        <div class="storycontent">
+                                            <%= @post.content %>
+                                              </div>
+                                              </div>
+
