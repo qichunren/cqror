@@ -1,5 +1,5 @@
 class BlogPanel::PostsController < ApplicationController
-  layout "myblog"
+  layout "blog_panel"
 
   # GET /posts
   # GET /posts.xml
@@ -78,7 +78,7 @@ class BlogPanel::PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(blog_panel_posts_url) }
       format.xml  { head :ok }
     end
   end
