@@ -1,10 +1,10 @@
-class PostsController < ApplicationController
+class BlogPanel::PostsController < ApplicationController
   layout "myblog"
 
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    @posts = Post.paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009102955) do
+ActiveRecord::Schema.define(:version => 20101022131324) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -33,5 +33,25 @@ ActiveRecord::Schema.define(:version => 20101009102955) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "login",               :limit => 200,                :null => false
+    t.string   "email",               :limit => 200
+    t.string   "crypted_password",    :limit => 200,                :null => false
+    t.string   "password_salt",       :limit => 200,                :null => false
+    t.string   "persistence_token",   :limit => 200,                :null => false
+    t.string   "single_access_token", :limit => 200,                :null => false
+    t.integer  "role",                :limit => 2,                  :null => false
+    t.datetime "last_login_at"
+    t.string   "last_login_ip"
+    t.datetime "last_change_at"
+    t.integer  "login_count",                        :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["last_login_at"], :name => "index_users_on_last_login_at"
+  add_index "users", ["login"], :name => "index_users_on_login"
+  add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
 
 end

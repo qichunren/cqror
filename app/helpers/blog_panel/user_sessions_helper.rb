@@ -1,0 +1,2 @@
+module BlogPanel::UserSessionsHelper
+end

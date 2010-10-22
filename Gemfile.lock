@@ -89,8 +89,8 @@ GEM
     rspec-mocks (2.0.0.rc)
       rspec-core (= 2.0.0.rc)
       rspec-expectations (= 2.0.0.rc)
-    rspec-rails (2.0.0.rc)
-      rspec (= 2.0.0.rc)
+    rspec-rails (2.0.1)
+      rspec (~> 2.0.0)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -113,6 +113,6 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.0)
   rails_config (= 0.1.5)
-  rspec-rails (>= 2.0.0.beta.22)
+  rspec-rails (>= 2.0.0)
   webrat
   will_paginate (= 3.0.pre2)
