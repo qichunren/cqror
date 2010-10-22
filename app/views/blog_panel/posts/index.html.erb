@@ -14,7 +14,7 @@
   <% else %>
     你还没有发表博客.
     <% if is_admin? %>
-      新创建一篇？<%= link_to "开始吧", new_myblog_post_path, :title => "发表博客文章" %>
+      新创建一篇？<%= link_to "开始吧", new_blog_panel_post_path, :title => "发表博客文章" %>
     <% end %>
   <% end %>
   <% content_for :sidebar do %>

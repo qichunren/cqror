@@ -4,7 +4,7 @@ class BlogPanel::PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.paginate :page => params[:page]
+    @posts = Post.paginate :page => params[:page], :order => "id DESC"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,11 +46,9 @@ class BlogPanel::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(@post, :notice => 'Post was successfully created.') }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
+        format.html { redirect_to([:blog_panel, @post], :notice => 'Post was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,10 +61,8 @@ class BlogPanel::PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to(@post, :notice => 'Post was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,7 +75,6 @@ class BlogPanel::PostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(blog_panel_posts_url) }
-      format.xml  { head :ok }
     end
   end
 end

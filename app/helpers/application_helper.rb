@@ -29,11 +29,11 @@ module ApplicationHelper
    end
 
    def is_admin?
-     false
+     current_user && current_user.login == "admin" && current_user.email == "whyruby@gmail.com"
    end
 
    def logged_in?
-     false
+     !!current_user
    end
 
   def google_analytics
