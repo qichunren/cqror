@@ -34,7 +34,7 @@
             <li>
               <% if is_admin? %>
                 <div>
-                  <% #= link_to image_tag("create_new_post.gif", :alt => "发表新日志"), new_myblog_post_path, :title => "发表新日志"  %>
+                  <%= link_to image_tag("create_new_post.gif", :alt => "发表新日志"), new_blog_panel_post_path, :title => "发表新日志"  %>
                   <% #= link_to "删除缓存", :controller => "/myblog/home", :action => "expire_all_cache" %>
                 </div>
               <% end %>
@@ -47,7 +47,7 @@
 
               <div>
                 <h3>我是谁？</h3>
-                <%  image_tag "me1.jpg", :style => "margin-right:8px;width:70px;height:70px;float:left;display:none"%>我是qichunren(蕲春人)，我用我喜欢的Ruby On Rails技术开发我喜欢的WEB应用，如果你需要做网站，请联系我。
+                <%= image_tag "me1.jpg", :style => "margin-right:8px;width:70px;height:70px;float:left;" %>我是qichunren(蕲春人)，我用我喜欢的Ruby On Rails技术开发我喜欢的WEB应用，如果你需要做网站，请联系我。
               </div>
               <%= yield :sidebar %>           
 

@@ -5,11 +5,11 @@
           </h2>
 
             <div class="meta">
-                at <%= @post.created_at.to_s(:db) %>
-                                      </div>
+                at <%= @post.created_at %>
+            </div>
 
-                                        <div class="storycontent">
-                                            <%=raw @post.content %>
-                                              </div>
-                                              </div>
+        <div class="storycontent">
+            <%= raw @post.content %>
+        </div>
+    </div>
 
