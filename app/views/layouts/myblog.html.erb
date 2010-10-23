@@ -40,6 +40,13 @@
                   <%=text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
                 <% end %>
               </div>
+			<div>
+			    <h3>Post tags</h3>
+			    <% tag_cloud(Post.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
+			       <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+
+			    <% end %>
+			</div>
 
               <div>
                 <h3>我是谁？</h3>
