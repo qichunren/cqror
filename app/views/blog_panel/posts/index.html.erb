@@ -1,13 +1,22 @@
 <% unless @posts.blank? %>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>标题</th>
+		<th>阅读次数</th>
+		<th>创建时间</th>
+		<th>操作</th>
+	</tr>
   <% @posts.each do |post| %>
-    <div id="post_<%= post.id %>" class="post">
-      <h2 class="storytitle"><%=link_to post.title, post , :title => h(post.title) %></h2>
-      <div class="meta">at <%= post.created_at.to_s(:db) %></div>
-      
-      <%= link_to "删除", [:blog_panel, post], :method => :delete, :confirm => "你要继续？" %>
-      
-    </div>
-  <% end %>
+    <tr>
+	  <td><%= post.id %></td>
+      <td><%=link_to post.title, post , :title => post.title %></td>
+	  <td><%= post.click_count %></td>
+	  <td><%= post.created_at.to_s(:db) %></td>
+	  <td><%= link_to "删除", [:blog_panel, post], :method => :delete, :confirm => "你要继续？" %></td>
+	</tr>
+   <% end %>
+  </table>
   
   <%= will_paginate @posts  %>
 

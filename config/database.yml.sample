@@ -12,8 +12,8 @@ development:
   database: cqror_development
   pool: 5
   username: root
-  password: ""    
-  socket: /tmp/mysql.sock
+  password: "123456"    
+  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,8 +25,8 @@ test:
   database: cqror_test
   pool: 5
   username: root
-  password: "" 
-  socket: /tmp/mysql.sock
+  password: "123456" 
+  socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
@@ -35,6 +35,15 @@ production:
   database: cqror_production
   pool: 5
   username: root
-  password: ""
-  socket: /tmp/mysql.sock
+  password: "123456"
+  socket: /var/run/mysqld/mysqld.sock
 
+developments:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: tdd_development
+  pool: 5
+  username: root
+  password: "123456"    
+  socket: /var/run/mysqld/mysqld.sock
