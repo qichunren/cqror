@@ -2,13 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -28,6 +22,7 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+#
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "will_paginate", "3.0.pre2"
 gem "friendly_id", "~>3.0"
@@ -36,4 +31,4 @@ gem "rails_config", "0.1.5"
 gem "awesome_print", :require => "ap", :group => :development
 gem "rspec-rails", ">=2.0.0", :group => [:development, :test]
 gem "webrat", :group => [:development, :test]
-gem "jquery-rails", :group => [:development, :test]
+gem "jquery-rails"
