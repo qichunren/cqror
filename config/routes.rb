@@ -1,6 +1,10 @@
 Cqror::Application.routes.draw do
 
-  resources :posts
+  resources :posts do
+    member do
+      get :tag
+    end
+  end
 
   match 'contact-us' => "pages#contact"
   match 'myblog' => "posts#index"

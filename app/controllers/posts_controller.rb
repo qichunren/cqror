@@ -22,5 +22,10 @@ class PostsController < ApplicationController
       format.xml  { render :xml => @post }
     end
   end
+  
+  # GET /posts/tag/ruby
+  def tag
+    @posts = Post.tagged_with(params[:id]).paginate :page => params[:page], :order => "id DESC"
+  end
 
 end
