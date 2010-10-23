@@ -1,9 +1,15 @@
 Cqror::Application.routes.draw do
 
+  get "comments/create"
+
+  get "comments/destroy"
+
   resources :posts do
     member do
       get :tag
     end
+    
+    resources :comments
   end
 
   match 'contact-us' => "pages#contact"

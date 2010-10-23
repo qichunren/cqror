@@ -10,5 +10,34 @@
   		<%=raw @post.content %>
     </div>
 
+</div><!-- end: .post -->
+
+<h3>Post comments (<%= @comments.size %>)</h3>
+<div class="comments">
+	<ul>
+		<% unless @comments.blank? %>
+			<% @comments.each do |comment| %>
+				<li><%= comment.content %></li>
+			<% end %>
+		<% else %>
+		  <li>No comment yet.</li>
+		<% end %>
+	</ul>
+</div>
+
+<h3>Give it a comment</h3>
+<div class="comment">
+	<%= form_for [@post, @comment] do |f| -%>
+	
+	<%= f.label	:email %>
+	<%= f.text_field :email %>
+	
+	<%= f.label	:website %>
+	<%= f.text_field :website %>
+	
+	<%= f.label :content %>
+	<%= f.text_area :content %>  
+	<%= f.submit %>
+	<% end -%>
 </div>
 

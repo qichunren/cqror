@@ -19,9 +19,12 @@ class PostsController < ApplicationController
     @post.click_count += 1
     @post.save
     
+    @comments = @post.comments
+    
+    @comment = @post.comments.build
+    
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @post }
     end
   end
   
