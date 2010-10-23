@@ -16,9 +16,7 @@
       <h1><a href='/blog_panel/posts'>Blog Panel for Qichunren</a></h1>
       <div class='nav'>
         <ul>
-          <li><%= link_to "博客", "/myblog"%></li>
-          <li><a href ="/myblog/links.html">链接</a></li>
-          <li><a href ="/myblog/about.html">关于</a></li>
+          <li><%= link_to "View blog", "/myblog"%></li>
         </ul>
       </div>
     </div><!--end:header-->
@@ -69,7 +67,6 @@
       </ul>
     </div>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
     <%= javascript_include_tag "jquery.validate.pack", "jquery.validate.messages_cn" %>
     <%= yield :body_footer %>
     <%= google_analytics %>
