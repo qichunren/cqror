@@ -310,3 +310,8 @@ label.error{color:#FF3300;padding:5px;padding-left:18px;display:block;margin-lef
 .CodeRay .ta { color:#E7BE69 }                      /* html tag */
 .CodeRay .pc { color:#6C9CBD }                      /* boolean */
 .CodeRay .line_numbers{padding-right:10px;}
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
