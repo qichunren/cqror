@@ -7,7 +7,7 @@
     <div class="meta">at <%= @post.created_at.to_s(:db) %> tags: <%= @post.tag_list %></div>
 
 	<div class="storycontent">
-  		<%=simple_format raw @post.content %>
+  		<%= raw simple_format @post.content %>
     </div>
 
 </div><!-- end: .post -->
