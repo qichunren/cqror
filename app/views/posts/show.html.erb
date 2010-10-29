@@ -18,13 +18,9 @@
 		<% unless @comments.blank? %>
 			<% @comments.each do |comment| %>
 				<li>
-					<img alt='' src='http://1.gravatar.com/avatar/51aec3ef60a5f2f1a6c0081a5b400325?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />	<p><%= comment.content %></p>
+					<img alt='' src='' class='avatar avatar-32 photo' height='32' width='32' />	<p><%= comment.content %></p>
 					
 					<p><cite>Comment by <%= link_to comment.website, comment.website %> &#8212; <%= link_to comment.created_at %></cite> </p>
-
-						</li>
-					
-					
 				</li>
 			<% end %>
 		<% end %>
