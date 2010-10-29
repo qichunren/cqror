@@ -7,37 +7,59 @@
     <div class="meta">at <%= @post.created_at.to_s(:db) %> tags: <%= @post.tag_list %></div>
 
 	<div class="storycontent">
-  		<%=raw @post.content %>
+  		<%=simple_format raw @post.content %>
     </div>
 
 </div><!-- end: .post -->
 
 <h3>Post comments (<%= @comments.size %>)</h3>
-<div class="comments">
-	<ul>
+<ul id="commentlist">
+
 		<% unless @comments.blank? %>
 			<% @comments.each do |comment| %>
-				<li><%= comment.content %></li>
+				<li>
+					<img alt='' src='http://1.gravatar.com/avatar/51aec3ef60a5f2f1a6c0081a5b400325?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />	<p><%= comment.content %></p>
+					
+					<p><cite>Comment by <%= link_to comment.website, comment.website %> &#8212; <%= link_to comment.created_at %></cite> </p>
+
+						</li>
+					
+					
+				</li>
 			<% end %>
-		<% else %>
-		  <li>No comment yet.</li>
 		<% end %>
 	</ul>
-</div>
+
 
 <h3>Give it a comment</h3>
-<div class="comment">
-	<%= form_for [@post, @comment] do |f| -%>
-	
-	<%= f.label	:email %>
-	<%= f.text_field :email %>
-	
-	<%= f.label	:website %>
-	<%= f.text_field :website %>
-	
-	<%= f.label :content %>
-	<%= f.text_area :content %>  
-	<%= f.submit %>
-	<% end -%>
-</div>
+
+
+
+<%= form_for [@post, @comment], :html => { :id  => "commentform" } do |f| -%>
+
+
+<p><input type="text" name="author" id="author" value="david" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><%= f.text_field :email, :size => 22, :tabindex => 2 %>
+<%= f.label	:email, "Mail (will not be published) (required)" %>
+</p>
+
+<p><%= f.text_field :website, :size => 22, :tabindex => 3 %>
+<%= f.label	:website %></p>
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p>
+	<%= f.text_area :content, :cols => "100%", :rows => 10, :tabindex  => 4 %>
+</p>
+
+<p>
+	<%= f.submit "Submit Comment", :tabindex => 5 %>
+
+<input type="hidden" name="comment_post_ID" value="561" />
+</p>
+
+<% end %>
+
 
