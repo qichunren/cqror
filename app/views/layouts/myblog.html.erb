@@ -35,24 +35,24 @@
                   <% #= link_to "删除缓存", :controller => "/myblog/home", :action => "expire_all_cache" %>
                 </div>
               <% end %>
-              <div>
+              <!--div>
                 <% #=link_to image_tag("rss.png"), myblog_rss_url, :title => "蕲春人的博客RSS" %>
-                <% form_tag "/myblog/search", :method => :get do %>
-                  <%=text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
+                <%= form_tag "/myblog/search", :method => :get do %>
+                  <%= text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
                 <% end %>
-              </div>
+              </div-->
 			<div>
 			    <h3>Post tags</h3>
 			    <% tag_cloud(Post.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
 			       <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
-
 			    <% end %>
-			</div>
+			</div><!-- end: post tags -->
 
               <div>
                 <h3>我是谁？</h3>
-                <%  image_tag "me1.jpg", :style => "margin-right:8px;width:70px;height:70px;float:left;display:none"%>我是qichunren(蕲春人)，我用我喜欢的Ruby On Rails技术开发我喜欢的WEB应用，如果你需要做网站，请联系我。
+                <%= image_tag "me1.jpg", :style => "margin-right:8px;width:70px;height:70px;float:left" %> 我是qichunren(蕲春人)，我用我喜欢的Ruby On Rails技术开发我喜欢的WEB应用，如果你需要做网站，请联系我。
               </div>
+
               <%= yield :sidebar %>           
 
 
