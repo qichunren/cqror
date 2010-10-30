@@ -3,7 +3,9 @@ class Comment < ActiveRecord::Base
   
   validates :content, :presence => true
   
+  scope :latest, :order => "id DESC"
+  
   include Gravtastic
-    gravtastic
+  gravtastic
   
 end

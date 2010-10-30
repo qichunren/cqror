@@ -14,10 +14,14 @@
    <%= will_paginate @posts, :page_links => false %>
  <% else %>
  你还没有发表博客.
- <% if is_admin? %>
- 新创建一篇？<%= link_to "开始吧", new_myblog_post_path, :title => "发表博客文章" %>
- <% end %>
 <% end %>
-<% content_for :sidebar do %>
 
+
+<% content_for :sidebar do %>
+<div>
+  <h3>最新回复</h3>
+  <% Comment.latest(5).all(:limit => 5).each do |comment| %>
+    <em><%= comment.author %></em>: <%= comment.content %><br/>
+  <% end %>
+</div>
 <% end %>
