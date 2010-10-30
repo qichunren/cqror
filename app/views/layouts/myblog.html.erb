@@ -14,16 +14,17 @@
       <h1><a href='/myblog'>蕲春人的博客</a></h1>
       <div class='nav'>
         <ul>
-          <li><%= link_to "博客", "/myblog"%></li>
+          <li><%= link_to "博客", "/myblog" %></li>
         </ul>
       </div>
-    </div><!--end:header-->
+    </div><!-- end:header -->
+
     <div id="tagline"><p>记录我的生活轨迹.关注Ruby,电子商务，移动开发</p></div>
 
     <div id="mainpage">
-      <div id="content">
-        <%= yield %>
-      </div>
+
+      <div id="content"><%= yield %></div> <!-- end:content --> 
+
       <div id="sidebar">
         <div class="sidemain">
           <ul>

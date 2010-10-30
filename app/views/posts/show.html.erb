@@ -1,3 +1,5 @@
+<% title  @post.title -%>
+
 <div class="post">
   <% @page_description = truncate(strip_tags(@post.content),:length => 80, :omission => "") %>
     <h2 class="storytitle">
