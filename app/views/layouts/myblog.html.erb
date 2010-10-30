@@ -64,12 +64,8 @@
 
     <div id="footer">
       <ul>
-        <li>蕲春人的博客 Developed with Ruby On Rails <%= Rails.version %></li>
-        <% unless current_user %><li><a href="/blog_panel/user_session/new">管理</a></li><% end %>
-        <% if current_user %>
-          <li><a href="/blog_panel/user_session/destroy">退出</a></li>
-        <% end %>
-        <li><!--Blogsimplified Theme--></li>
+        <li>蕲春人的博客 Developed with Ruby On Rails <%= Rails.version %> Ruby:<%= RUBY_VERSION %></li>
+        <!--Blogsimplified Theme--></li>
       </ul>
     </div><!-- end:#footer -->
 
