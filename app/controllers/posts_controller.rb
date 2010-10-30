@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post.click_count += 1
     @post.save
     
-    @comments = @post.comments
+    @comments = @post.comments.all
     
     @comment = @post.comments.build
     

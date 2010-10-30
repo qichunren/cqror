@@ -32,3 +32,5 @@ gem "awesome_print", :require => "ap", :group => :development
 gem "rspec-rails", ">=2.0.0", :group => [:development, :test]
 gem "webrat", :group => [:development, :test]
 gem "jquery-rails"
+gem 'gravtastic'
+

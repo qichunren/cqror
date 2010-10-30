@@ -18,9 +18,9 @@
 		<% unless @comments.blank? %>
 			<% @comments.each do |comment| %>
 				<li>
-					<img alt='' src='' class='avatar avatar-32 photo' height='32' width='32' />	<p><%= comment.content %></p>
-					
-					<p><cite>Comment by <%= link_to comment.website, comment.website %> &#8212; <%= link_to comment.created_at %></cite> </p>
+					<%= image_tag comment.gravatar_url, :height => 32, :width => 32 %>
+						<p><%= comment.content %></p>
+					<p><cite>Comment by <%= link_to comment.author, comment.website %> &#8212; <%= comment.created_at %></cite> </p>
 				</li>
 			<% end %>
 		<% end %>
@@ -34,7 +34,8 @@
 <%= form_for [@post, @comment], :html => { :id  => "commentform" } do |f| -%>
 
 
-<p><input type="text" name="author" id="author" value="david" size="22" tabindex="1" />
+<p>
+	<%= f.text_field :author, :size  => 22, :tabindex => 1 %>
 <label for="author"><small>Name (required)</small></label></p>
 
 <p><%= f.text_field :email, :size => 22, :tabindex => 2 %>
