@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.paginate :page => params[:page], :order => "id DESC"
+    @posts = Post.normal.paginate :page => params[:page], :order => "id DESC"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = Post.find(params[:id])
+    @post = Post.normal.find(params[:id])
     @post.click_count += 1
     @post.save
     
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   
   # GET /posts/tag/ruby
   def tag
-    @posts = Post.tagged_with(params[:id]).paginate :page => params[:page], :order => "id DESC"
+    @posts = Post.normal.tagged_with(params[:id]).paginate :page => params[:page], :order => "id DESC"
   end
 
 end

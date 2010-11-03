@@ -27,10 +27,10 @@
   </div>
   <div class="field">
     <%= f.label :published %>
-    <%= f.check_box :published, :checked => true %>
+    <%= f.check_box :published, :checked => @post.new_record? ? true : @post.published? %>
   </div>
   <div class="actions">
-    <%= f.submit %> or <%= link_to 'Back', posts_path %>
+    <%= f.submit %> or <%= link_to 'Back', blog_panel_posts_path %>
   </div>
   <%= wikitoolbar_for 'post_content' %>   
 <% end %>

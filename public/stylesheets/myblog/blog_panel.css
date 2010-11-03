@@ -300,3 +300,6 @@ div.pagination span.disabled{padding: 2px 5px 2px 5px;margin: 2px;border: 1px so
 }
 div.error{padding:8px;border-top:2px solid #FF9900;margin-top:10px;}
 label.error{color:#FF3300;padding:5px;padding-left:18px;display:block;margin-left:1em;background:url(/images/icons/unchecked.gif) no-repeat 0 7px;}
+
+
+.field{ margin-bottom:10px;}
