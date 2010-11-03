@@ -9,6 +9,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.3)
     abstract (1.0.0)
     actionmailer (3.0.0)
       actionpack (= 3.0.0)
@@ -42,6 +43,7 @@ GEM
     awesome_print (0.2.1)
     babosa (0.2.0)
     builder (2.1.2)
+    coderay (0.9.5)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -106,9 +108,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   acts-as-taggable-on (= 2.0.6)
   authlogic!
   awesome_print
+  coderay
   friendly_id (~> 3.0)
   gravtastic
   jquery-rails

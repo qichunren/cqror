@@ -7,7 +7,10 @@
     <%= yield(:description) %> <%= yield(:keywords) %>
 
     <%= stylesheet_link_tag 'myblog/blog_panel.css' %>
-    <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag 'jstoolbar.css' %>
+    <%= javascript_include_tag :defaults %>   
+\
+    
     <%= csrf_meta_tag %>
     <%# must have this tag, or it wil raise ActionController::InvalidAuthenticityToken error %>
   </head>

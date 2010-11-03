@@ -41,6 +41,8 @@ padding: 6px 6px 6px 12px;
 color: #4f6b72;
 }
 
+textarea.wiki-edit { width: 99%; } 
+
 body {
  width: 960px; text-align: left;
  margin: 30px auto;
@@ -93,10 +95,7 @@ pre.code{
   overflow:auto;
 }
 
-#content textarea {
- width: 506px; height: 100px;
- padding: 2px 2px; margin: 10px 0;
-}
+
 
 #commentlist li img{float:left;margin-right:10px;padding:5px;}
 #commentlist li{clear:both;margin-bottom:8px;border:1px solid #BDBDBD;}
