@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   acts_as_taggable  
   
-  has_many :comments
+  has_many :comments, :order => "id", :dependent => :destroy
 
   scope :normal, where(:published => true) 
   scope :draft,  where(:published => false)

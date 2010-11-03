@@ -1,12 +1,11 @@
 <% unless @posts.blank? %>
-<em>There are <%= @posts.total_entries %> posts, and <%= Post.normal.count %> public  posts. </em>
+<p>There are all <strong><%= @posts.total_entries %></strong> posts, <strong><%= Post.normal.count %></strong> public  posts, and <strong><%= Comment.all.count %></strong> comments. </em>
 <table  cellspacing="0">
 	<tr>
 		<th>ID</th>
 		<th width='300'>标题</th>  
 	  <th>阅读次数</th>    
 	  <th>回复次数</th> 
-	 
 		<th>创建时间</th>
 		<th>操作</th>
 	</tr>
@@ -28,9 +27,6 @@
 
   <% else %>
     你还没有发表博客.
-    <% if is_admin? %>
-      新创建一篇？<%= link_to "开始吧", new_blog_panel_post_path, :title => "发表博客文章" %>
-    <% end %>
   <% end %>
   <% content_for :sidebar do %>
   <% end %>
