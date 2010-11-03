@@ -3,7 +3,7 @@
 <div class="post">
   <% @page_description = truncate(strip_tags(@post.content),:length => 80, :omission => "") %>
     <h2 class="storytitle">
-        <%=link_to @post.title, @post, :title => @post.title %>
+        <%=link_to @post.title, "/myblog/#{@post.to_param}", :title => @post.title %>
      </h2>
 
     <div class="meta">at <%= @post.created_at.to_s(:db) %> tags: <%= @post.tag_list %></div>

@@ -1,9 +1,5 @@
 Cqror::Application.routes.draw do
 
-  get "comments/create"
-
-  get "comments/destroy"
-
   resources :posts do
     member do
       get :tag
@@ -13,7 +9,9 @@ Cqror::Application.routes.draw do
   end
 
   match 'contact-us' => "pages#contact"
-  match 'myblog' => "posts#index"
+  get 'myblog' => "posts#index"
+  get "myblog/:id" => "posts#show" 
+  get "myblog/tag/:id" => "posts#tag" 
 
 
   namespace :blog_panel do

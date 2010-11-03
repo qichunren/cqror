@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       if @comment.save
         flash[:notice] = "Successfully comment..."
       end
-      format.html { redirect_to @post } 
+      format.html { redirect_to "/myblog/#{@post.to_param}" } 
     end
   end
 
