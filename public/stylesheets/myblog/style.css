@@ -70,8 +70,8 @@ pre.code{
  padding: 2px 2px; margin: 10px 0;
 }
 
-#commentlist li img{float:left;margin-right:10px;padding:5px;}
-#commentlist li{clear:both;margin-bottom:8px;border:1px solid #BDBDBD;}
+#commentlist .comment_author_avatar{float:left;margin-right:20px;padding:5px;}
+#commentlist li{clear:both;margin-bottom:12px;border-bottom:1px dashed #BDBDBD;}
 
 #sidebar {
  width: 195px; float: right;

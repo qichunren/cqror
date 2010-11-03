@@ -20,8 +20,8 @@
 		<% unless @comments.blank? %>
 			<% @comments.each do |comment| %>
 				<li>
-					<%= image_tag comment.gravatar_url, :height => 32, :width => 32 %>
-						<p><%= comment.content %></p>
+					<%= image_tag comment.gravatar_url, :height => 32, :width => 32, :alt => comment.author, :class => "comment_author_avatar" %>
+						<p><%= simple_format comment.content %></p>
 					<p><cite>Comment by <%= link_to comment.author, comment.website %> &#8212; <%= l comment.created_at, :format => :long %></cite> </p>
 				</li>
 			<% end %>
