@@ -13,7 +13,9 @@
       <td><%=link_to post.title, post , :title => post.title %></td>
 	  <td align='right'><%= post.click_count %></td>
 	  <td><%= post.created_at.to_s(:db) %></td>
-	  <td><%= link_to "删除", [:blog_panel, post], :method => :delete, :confirm => "你要继续？" %></td>
+	  <td>
+	  <%= link_to "修改", [:edit, :blog_panel, post] %>
+	  <%= link_to "删除", [:blog_panel, post], :method => :delete, :confirm => "你要继续？" %></td>
 	</tr>
    <% end %>
   </table>

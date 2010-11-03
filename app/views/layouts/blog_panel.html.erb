@@ -46,7 +46,7 @@
               <% end %>
               <div>
                 <% #=link_to image_tag("rss.png"), myblog_rss_url, :title => "蕲春人的博客RSS" %>
-                <% form_tag "/myblog/search", :method => :get do %>
+                <%= form_tag "/myblog/search", :method => :get do %>
                   <%=text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
                 <% end %>
               </div>
