@@ -9,15 +9,22 @@ Cqror::Application.routes.draw do
   end
 
   match 'contact-us' => "pages#contact"
-  get 'myblog' => "posts#index"
-  get "myblog/:id" => "posts#show" 
+  
+  get "myblog/login" => "blog_panel/user_sessions#new"
+  
+  get "myblog/feed"    => "posts#feed", :defaults => { :format => 'rss' } 
+  get 'myblog'         => "posts#index"
+  get "myblog/:id"     => "posts#show" 
   get "myblog/tag/:id" => "posts#tag" 
+  
 
 
   namespace :blog_panel do
     resources :posts
     resource  :user_session
   end
+  
+  
 
   root :to => "welcome#index"
 

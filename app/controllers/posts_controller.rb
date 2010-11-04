@@ -1,9 +1,10 @@
-class PostsController < ApplicationController
+class PostsController < ApplicationController  
+  respond_to :rss, :only => [:rss]
   layout "myblog"
 
   # GET /myblog
   def index
-    @posts = Post.normal.paginate :page => params[:page], :order => "id DESC"
+    @posts = Post.normal.order("id DESC").paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,6 +23,15 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       format.html # show.html.erb
+    end
+  end
+     
+  # GET /myblog/feed.rss
+  def feed
+    @posts = Post.normal.order("id DESC").limit(10)   
+    respond_with(@posts) do |format|
+      format.rss { render :rss => @posts, :url => "#{root_url}myblog", :title => "Qichunren's blog", :description => "Recording my life", 
+        :item => { :title => :title, :description => :content, :item_link => :my_post_path }}
     end
   end
   

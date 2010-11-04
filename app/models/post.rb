@@ -9,6 +9,10 @@ class Post < ActiveRecord::Base
   
   before_create do |post|
     post.click_count = 0
+  end                                     
+  
+  def my_post_path
+    "myblog/#{to_param}"
   end
 
 end

@@ -7,7 +7,7 @@
     <%= yield(:description) %> <%= yield(:keywords) %>
 
     <%= stylesheet_link_tag 'myblog/style.css' %>
-    <% #= auto_discovery_link_tag(:rss, {:controller => "/myblog/home", :action => 'rss'} ) %>
+    <%= auto_discovery_link_tag(:rss, {:controller => "posts", :action => 'feed'} ) %>
   </head>
   <body>
     <div id="header">
@@ -29,14 +29,15 @@
         <div class="sidemain">
           <ul>
             <li>
-              <% if is_admin? %>
+      
                 <div>
-                  <% #= link_to image_tag("create_new_post.gif", :alt => "发表新日志"), new_myblog_post_path, :title => "发表新日志"  %>
+                  <%= link_to image_tag("rss-icon.png"), "#{root_url}myblog/feed", :title => "蕲春人的博客RSS" %>
+                  订阅此博客
                   <% #= link_to "删除缓存", :controller => "/myblog/home", :action => "expire_all_cache" %>
                 </div>
-              <% end %>
+          
               <!--div>
-                <% #=link_to image_tag("rss.png"), myblog_rss_url, :title => "蕲春人的博客RSS" %>
+                
                 <%= form_tag "/myblog/search", :method => :get do %>
                   <%= text_field_tag :q, params[:q], :style => "width:90px;" %><%= submit_tag "搜", :class => "awesome button" %>
                 <% end %>

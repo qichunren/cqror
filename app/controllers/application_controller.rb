@@ -35,6 +35,38 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
-  end
+  end 
+  
 
+end
+
+
+
+
+ActionController.add_renderer :rss do |data, options|
+  self.content_type ||= Mime::XML
+  self.response_body = data.to_xml(options)
+  xml = Builder::XmlMarkup.new(:indent => 2)
+  
+  xml.instruct!(:xml, :encoding => "UTF-8")
+
+  xml.rss "version" => "2.0" do
+   xml.channel do
+
+     xml.title options[:title]
+     xml.link  options[:url]
+     xml.description options[:description]
+
+     data.each do |item|
+       xml.item do
+         xml.title item.send(options[:item][:title])
+         xml.link  item.send(options[:item][:item_link])
+         xml.description item.send(options[:item][:description])
+         xml.guid "#{root_url}" + item.send(options[:item][:item_link])
+       end
+     end
+
+   end
+  end
+  self.response_body = xml.target!
 end

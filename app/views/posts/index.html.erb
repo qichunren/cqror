@@ -2,7 +2,7 @@
 <% unless @posts.blank? %>
   <% @posts.each do |post| %>
     <div id="post_<%= post.id %>" class="post">
-    <h2 class="storytitle"><%=link_to post.title, "myblog/#{post.to_param}" , :title => h(post.title) %></h2>
+    <h2 class="storytitle"><%=link_to post.title, "#{root_url}#{post.my_post_path}" , :title => h(post.title) %></h2>
     <div class="meta">at <%= post.created_at.to_s(:db) %> tags: <%= post.tag_list %> </div>
             <div class="storycontent">
                    <%=truncate(strip_tags(post.content), :length => 100, :omission => "......") %>
