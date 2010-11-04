@@ -12,7 +12,7 @@
   <% @posts.each do |post| %>
     <tr>
 	  <td <%= "style='background-color:#BDBDBD;'" unless post.published? %> ><%= post.id %></td>
-      <td><%= post.published? ? link_to(post.title, post , :title => post.title) : post.title %></td>
+      <td><%= post.published? ? link_to(post.title, "/myblog/#{post.to_param}" , :title => post.title) : post.title %></td>
 	  <td align='right'><%= post.click_count %></td>
 	  <td align='right'><%= post.comments.count %></td>
 	  <td><%= post.created_at.to_s(:db) %></td>
