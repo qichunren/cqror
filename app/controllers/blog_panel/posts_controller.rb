@@ -1,38 +1,33 @@
+# encoding: utf-8
 class BlogPanel::PostsController < ApplicationController 
   
   before_filter :require_user
   layout "blog_panel"
 
   # GET /posts
-  # GET /posts.xml
   def index
     @posts = Post.paginate :page => params[:page], :order => "id DESC"
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
     end
   end
 
   # GET /posts/1
-  # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @post }
     end
   end
 
   # GET /posts/new
-  # GET /posts/new.xml
   def new
     @post = Post.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @post }
     end
   end
 
@@ -42,7 +37,6 @@ class BlogPanel::PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.xml
   def create
     @post = Post.new(params[:post])
 
@@ -56,7 +50,6 @@ class BlogPanel::PostsController < ApplicationController
   end
 
   # PUT /posts/1
-  # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
 
@@ -70,7 +63,6 @@ class BlogPanel::PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.xml
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
