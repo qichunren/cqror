@@ -1,4 +1,6 @@
-class BlogPanel::PostsController < ApplicationController
+class BlogPanel::PostsController < ApplicationController 
+  
+  before_filter :require_user
   layout "blog_panel"
 
   # GET /posts
