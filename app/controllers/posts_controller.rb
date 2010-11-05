@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /myblog
   def index
-    @posts = Post.normal.order("id DESC").paginate :page => params[:page]
+    @posts = Post.normal.order("id DESC").paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
