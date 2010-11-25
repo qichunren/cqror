@@ -20,7 +20,11 @@ Cqror::Application.routes.draw do
 
 
   namespace :blog_panel do
-    resources :posts
+    resources :posts do
+      member do
+        delete :destroy_comment
+      end
+    end
     resource  :user_session
   end
   

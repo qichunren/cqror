@@ -1,8 +1,6 @@
 <div class="post">
   <% @page_description = truncate(strip_tags(@post.content),:length => 80, :omission => "") %>
-    <h2 class="storytitle">
-        <%=link_to @post.title, @post, :title => @post.title %>
-          </h2>
+    <h2 class="storytitle"><%=link_to @post.title, @post, :title => @post.title %></h2>
 
             <div class="meta">
                 at <%= @post.created_at %>
@@ -13,4 +11,28 @@
             <%= raw @post.content %>
         </div>
     </div>
+    
+<div id="comments">
+  <h3>回复</h3>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Author</th>
+      <th>Web Site</th>
+      <th>IP</th>
+      <th>Content</th>   
+      <th></th>
+    </tr>
+  <% @post.comments.each do |comment| %>
+    <tr>
+      <td><%= comment.email %></td>
+      <td><%= comment.author %></td>
+      <td><%= comment.website %></td>
+      <td><%= comment.user_ip %></td>
+      <td><%= comment.content %></td>
+      <td><%= link_to "删除", destroy_comment_blog_panel_post_path(@post, :comment_id => comment.id), :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 

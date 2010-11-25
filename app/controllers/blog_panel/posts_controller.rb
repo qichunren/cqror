@@ -61,6 +61,15 @@ class BlogPanel::PostsController < ApplicationController
       end
     end
   end
+     
+  # DELETE
+  def destroy_comment
+    @post = Post.find(params[:id])
+    comment = @post.comments.find params[:comment_id]
+    comment.destroy
+    flash[:notice] = "回复已经删除"
+    redirect_to([:blog_panel, @post])
+  end
 
   # DELETE /posts/1
   def destroy
