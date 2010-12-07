@@ -68,6 +68,11 @@
 <input type="hidden" name="comment_post_ID" value="561" />
 </p>
 
+<% end %> 
+
+<%= content_for :body_footer do %>
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<%= javascript_include_tag "rails", "jquery.validate.pack", "jquery.validate.messages_cn" %>
 <% end %>
 
 
