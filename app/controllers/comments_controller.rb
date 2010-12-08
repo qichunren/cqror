@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find params[:post_id]
     @comment = @post.comments.build params[:comment]
-    @comment.user_id = request.remote_ip
+    @comment.user_ip = request.remote_ip
     
     respond_to do |format|
       if @comment.save
