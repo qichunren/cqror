@@ -1,0 +1,31 @@
+<table  cellspacing="0">
+	<tr>
+		<th>ID</th>
+		<th width='300'>Email</th>  
+	  <th>Name</th>    
+	  <th>IP</th> 
+	  <th>Website</th> 
+	  <th>Content</th>
+	  <th>Releated Post</th> 
+		<th>创建时间</th>
+		<th>操作</th>
+	</tr>
+  <% @latest_comments.each do |comment| %>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= comment.email %></td> 
+      <td><%= comment.author %></td> 
+      <td><%= comment.user_ip %></td> 
+      <td><%= comment.website %></td> 
+      <td><%=truncate(strip_tags(comment.content), :length => 100, :omission => "......") %></td>
+      <td><%=link_to comment.post.title, "#{root_url}#{comment.post.my_post_path}" , :title => h(comment.post.title) %></td> 
+      <td><%= comment.created_at.to_s(:db) %></td> 
+      <td><%= link_to "删除", [:blog_panel, comment], :method => :delete %></td>
+    </tr>
+  <% end %> 
+  
+  </table>
+  
+  
+  <% content_for :sidebar do %>
+  <% end %>

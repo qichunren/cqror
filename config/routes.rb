@@ -27,6 +27,7 @@ Cqror::Application.routes.draw do
         delete :destroy_comment
       end
     end
+    resources :comments
     resource  :user_session
   end
   
