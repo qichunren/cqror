@@ -1,6 +1,8 @@
 class PostsController < ApplicationController  
   respond_to :rss, :only => [:rss]
   layout "myblog"
+  
+  # cache_pages [:index, :show]
 
   # GET /myblog
   def index

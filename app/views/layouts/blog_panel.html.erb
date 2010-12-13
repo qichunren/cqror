@@ -8,24 +8,24 @@
 
     <%= stylesheet_link_tag 'myblog/blog_panel.css' %>
     <%= stylesheet_link_tag 'jstoolbar.css' %>
-    <%= javascript_include_tag :defaults %>   
+    <%= javascript_include_tag "jquery", "rails" %>   
     <%= csrf_meta_tag %>
     <%# must have this tag, or it wil raise ActionController::InvalidAuthenticityToken error %>
   </head>
   <body>
     <div id="header">
-      <h1><a href='/blog_panel/posts'>Blog Panel for Qichunren</a></h1>
+      <h1><a href='/blog_panel/posts'>博客管理</a></h1>
       <div class='nav'>
         <ul>
-          <li><%= link_to "View blog", "/myblog", :target => "_blank", :title => "View my blog" %></li>
+          <li><%= link_to "查看博客", "/myblog", :target => "_blank", :title => "查看博客" %></li>
         </ul>
       </div>
     </div><!--end:header-->
 
     <div id="tagline">
         <ul>
-          <li><%= link_to "Posts", "/blog_panel/posts"%></li>
-          <li><%= link_to "Comments", "/blog_panel/comments"%></li>
+          <li><%= link_to "文章", "/blog_panel/posts"%></li>
+          <li><%= link_to "评论", "/blog_panel/comments"%></li>
         </ul>    	
     </div>
 
@@ -65,7 +65,9 @@
         <li>蕲春人的博客 Developed with Ruby On Rails <%= Rails.version %></li>
         <% unless current_user %><li><a href="/blog_panel/user_session/new">管理</a></li><% end %>
         <% if current_user %>
-          <li><a href="/blog_panel/user_session/destroy">退出</a></li>
+          <li>
+            <%= link_to "退出", "/blog_panel/user_session/destroy", :method => 'delete' %>
+            </li>
         <% end %>
         <li><!--Blogsimplified Theme--></li>
       </ul>

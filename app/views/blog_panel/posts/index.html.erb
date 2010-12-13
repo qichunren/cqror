@@ -1,3 +1,4 @@
+<% title "文章管理" %>
 <% unless @posts.blank? %>
 <p>There are all <strong><%= @posts.total_entries %></strong> posts, <strong><%= Post.normal.count %></strong> public  posts, and <strong><%= Comment.all.count %></strong> comments. </em>
 <table  cellspacing="0">
