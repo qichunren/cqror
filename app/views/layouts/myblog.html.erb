@@ -44,7 +44,7 @@
                 <% end %>
               </div-->
 			<div>
-			    <h3>Post tags</h3>
+			    <h3>博客标签</h3>
 			    <% tag_cloud(Post.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
 			       <%= link_to tag.name, "/myblog/tag/#{tag.name}", :class => css_class %>
 			    <% end %>
