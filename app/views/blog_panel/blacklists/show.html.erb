@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ip:</b>
+  <%= @blacklist.ip %>
+</p>
+
+<p>
+  <b>Remark:</b>
+  <%= @blacklist.remark %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_panel_blacklist_path(@blacklist) %> |
+<%= link_to 'Back', blog_panel_blacklists_path %>

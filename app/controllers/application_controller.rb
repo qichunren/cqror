@@ -2,7 +2,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user 
+  
+  before_filter :check_blacklist
 
   private
 
@@ -35,6 +37,15 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+  
+  def check_blacklist
+    if session[:super] && session[:super] == "qichunren"
+    elsif params[:super] == "qichunren"
+      session[:super] = "qichunren"
+    elsif Blacklist.is_black?(request) 
+      render :file => '/public/404.html', :layout => false, :status => 403 and return
+    end
   end 
   
 

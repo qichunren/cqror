@@ -1,8 +1,5 @@
 # encoding: utf-8
-class BlogPanel::PostsController < ApplicationController 
-  
-  before_filter :require_user
-  layout "blog_panel"
+class BlogPanel::PostsController < BlogPanel::BaseQichunrenController
 
   # GET /posts
   def index

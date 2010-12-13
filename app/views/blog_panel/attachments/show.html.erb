@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @attachment.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @attachment.description %>
+</p>
+
+<p>
+  <b>Avatar file name:</b>
+  <%= @attachment.avatar_file_name %>
+</p>
+
+<p>
+  <b>Avatar content type:</b>
+  <%= @attachment.avatar_content_type %>
+</p>
+
+<p>
+  <b>Avatar file size:</b>
+  <%= @attachment.avatar_file_size %>
+</p>
+
+<p>
+  <b>Avatar updated at:</b>
+  <%= @attachment.avatar_updated_at %>
+</p>
+
+  <%= image_tag @attachment.avatar.url %>
+<%= link_to '修改', edit_blog_panel_attachment_path(@attachment) %> |
+<%= link_to '返回', blog_panel_attachments_path %>

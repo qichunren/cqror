@@ -1,5 +1,9 @@
 Cqror::Application.routes.draw do
 
+  resources :blacklists
+
+  resources :attachments
+
   resources :posts do
     member do
       get :tag
@@ -28,6 +32,8 @@ Cqror::Application.routes.draw do
       end
     end
     resources :comments
+    resources :attachments
+    resources :blacklists
     resource  :user_session
   end
   

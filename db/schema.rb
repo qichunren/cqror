@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023083503) do
+ActiveRecord::Schema.define(:version => 20101213055836) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blacklists", :force => true do |t|
+    t.string   "ip"
+    t.string   "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "email"

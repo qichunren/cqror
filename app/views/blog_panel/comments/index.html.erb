@@ -2,12 +2,12 @@
 <table  cellspacing="0">
 	<tr>
 		<th>ID</th>
-		<th width='300'>Email</th>  
+		<th width='100'>Email</th>  
 	  <th>Name</th>    
 	  <th>IP</th> 
 	  <th>Website</th> 
-	  <th>Content</th>
-	  <th>Releated Post</th> 
+
+	  <th>博客</th> 
 		<th>创建时间</th>
 		<th>操作</th>
 	</tr>
@@ -18,10 +18,13 @@
       <td><%= comment.author %></td> 
       <td><%= comment.user_ip %></td> 
       <td><%= comment.website %></td> 
-      <td><%=truncate(strip_tags(comment.content), :length => 100, :omission => "......") %></td>
+
       <td><%=link_to comment.post.title, "#{root_url}#{comment.post.my_post_path}" , :title => h(comment.post.title) %></td> 
       <td><%= comment.created_at.to_s(:db) %></td> 
-      <td><%= link_to "删除", [:blog_panel, comment], :method => :delete %></td>
+      <td>
+        <%= link_to "删除", [:blog_panel, comment], :method => :delete %>
+        <%= link_to "删除！！！", "/blog_panel/comments/#{comment.id}?blanklist=true", :method => :delete, :title => "删除并将ip加入黑名单" %>
+      </td>
     </tr>
   <% end %> 
   

@@ -1,0 +1,25 @@
+<h2>黑名单列表</h2>
+
+<table>
+  <tr>
+    <th>IP地址</th>
+    <th>备注</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blacklists.each do |blacklist| %>
+  <tr>
+    <td><%= blacklist.ip %></td>
+    <td><%= blacklist.remark %></td>
+    <td><%= link_to 'Show', [:blog_panel, blacklist] %></td>
+    <td><%= link_to 'Edit', edit_blog_panel_blacklist_path(blacklist) %></td>
+    <td><%= link_to 'Destroy', [:blog_panel, blacklist], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '填加IP黑名单', new_blog_panel_blacklist_path %>
