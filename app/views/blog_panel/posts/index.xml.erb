@@ -1,0 +1,20 @@
+<blog>
+  
+<posts count="<%= Post.all.count %>" >
+  <% Post.order("id ASC").all.each do |post| %>
+    <post post_id="<%= post.id %>" title="<%= post.title %>" uri="<%= post.to_param %>" click_count="<%= post.click_count %>" created_at="<%= post.created_at %>" tags="<%= post.tag_list %>" >
+      <raw><%= post.content %></raw>
+      
+      <html><%= format_post post.content %></html>
+      
+      <comments count="<%= post.comments.count %>" >
+        <% post.comments.each do |comment| %>
+          <comment comment_id="<%= comment.id %>" author="<%= comment.author %>" email="<%= comment.email %>" website="<%= comment.website %>" created_at="<%= comment.created_at %>" >
+            <%= comment.content %>
+          </comment>
+        <% end %>  
+      </comments>
+    </post>
+  <% end %>
+</posts>
+</blog>

@@ -1,6 +1,6 @@
 <% title "文章管理" %>
 <% unless @posts.blank? %>
-<p>There are all <strong><%= @posts.total_entries %></strong> posts, <strong><%= Post.normal.count %></strong> public  posts, and <strong><%= Comment.all.count %></strong> comments. </em>
+<p>There are all <strong><%= @posts.total_entries %></strong> posts, <%= link_to "备份", "/blog_panel/posts.xml", :target => "blank" %>,<strong><%= Post.normal.count %></strong> public  posts, and <strong><%= Comment.all.count %></strong> comments. </p>
 <table  cellspacing="0">
 	<tr>
 		<th>ID</th>

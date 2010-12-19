@@ -6,7 +6,8 @@ class BlogPanel::PostsController < BlogPanel::BaseQichunrenController
     @posts = Post.paginate :page => params[:page], :order => "id DESC"
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.erb 
+      format.xml
     end
   end
 
