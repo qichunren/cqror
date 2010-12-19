@@ -3,7 +3,7 @@ class BlogPanel::BlacklistsController < BlogPanel::BaseQichunrenController
 
   # GET /blacklists
   def index
-    @blacklists = Blacklist.all
+    @blacklists = Blacklist.paginate :per_page => 40, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

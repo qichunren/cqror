@@ -1,3 +1,4 @@
+<% title "标签：" + params[:id] %>
 <% unless @posts.blank? %>
 Posts tagged with <%= params[:id] %>
   <% @posts.each do |post| %>

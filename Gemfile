@@ -22,6 +22,7 @@ gem "RedCloth"
 
 gem "paperclip"
 
+
 gem "acts-as-taggable-on", "2.0.6"
 gem "rails_config", "0.1.5"
 gem "awesome_print", :require => "ap", :group => :development

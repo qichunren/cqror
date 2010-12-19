@@ -9,8 +9,11 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         flash[:notice] = "Successfully comment..."
+        format.html { redirect_to "/myblog/#{@post.to_param}" }
+      else                                                   
+        format.html { render :text => "请输入必填项。#{@comment.errors.inspect}" and return }
       end
-      format.html { redirect_to "/myblog/#{@post.to_param}" } 
+       
     end
   end
 

@@ -1,6 +1,6 @@
 <div class="post">
   <% @page_description = truncate(strip_tags(@post.content),:length => 80, :omission => "") %>
-    <h2 class="storytitle"><%=link_to @post.title, "#{root_url}#{@post.my_post_path}", :title => @post.title %></h2>
+    <h2 class="storytitle"><%=link_to @post.title, "#{root_url}#{@post.my_post_path}", :title => @post.title, :target => "blank" %></h2>
 
             <div class="meta">
                 at <%= @post.created_at %>
@@ -30,7 +30,9 @@
       <td><%= comment.website %></td>
       <td><%= comment.user_ip %></td>
 
-      <td><%= link_to "删除", destroy_comment_blog_panel_post_path(@post, :comment_id => comment.id), :method => :delete %></td>
+      <td><%= link_to "删除", destroy_comment_blog_panel_post_path(@post, :comment_id => comment.id), :method => :delete %> - 
+        <%= link_to "删除！！！", "/blog_panel/comments/#{comment.id}?blanklist=true", :method => :delete, :title => "删除并将ip加入黑名单" %>
+        </td>
     </tr>
   <% end %>
   </table>

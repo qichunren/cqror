@@ -19,8 +19,11 @@ Cqror::Application.routes.draw do
   get "myblog/feed"    => "posts#feed", :defaults => { :format => 'rss' } 
   get 'myblog'         => "posts#index"
   get "myblog/about-me" => "pages#about_me"
+  get "myblog/code_image" => "pages#code_image"
   get "myblog/:id"     => "posts#show" 
-  get "myblog/tag/:id" => "posts#tag"                                    
+  get "myblog/tag/:id" => "posts#tag"      
+  
+                                
 
   
 

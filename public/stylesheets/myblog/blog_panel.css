@@ -81,7 +81,7 @@ body {
 }
 
 #content {
- width: 724px; float: left;
+ width: 744px; float: left;
  min-height: 1040px;
  margin: 0; padding: 10px 20px;
  background-color: #fff;
@@ -106,7 +106,7 @@ pre.code{
 #commentlist li{clear:both;margin-bottom:8px;border:1px solid #BDBDBD;}
 
 #sidebar {
- width: 195px; float: right;
+ width: 175px; float: right;
  min-height: 1040px;
  margin: 0; padding: 0;
  background-color: #ddffcc;
