@@ -1,3 +1,5 @@
+gem "rmagick"
+require "RMagick"
 
 class NoisyImage
   

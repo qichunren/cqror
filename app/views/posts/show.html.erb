@@ -59,10 +59,11 @@
 <p>
 	<%= f.text_area :content, :cols => "100%", :rows => 10, :tabindex  => 4 %>
 </p>
-
+<p>
+  <%= text_field_tag "code_image", "", :style => "width:50px;" %> <%= image_tag "/myblog/code_image" %>
+</p>
 <p>
 	<%= f.submit "提交评论", :tabindex => 5 %>
-
 <input type="hidden" name="comment_post_ID" value="561" />
 </p>
 
