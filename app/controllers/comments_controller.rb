@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   
   def create
     if params[:code_image] != session[:code_image]
-      render :text => "验证码不正确" and return
+      render :text => "验证码不正确.#{session[:code_image]}" and return
     end
     session[:code_image] = nil
     @post = Post.find params[:post_id]
