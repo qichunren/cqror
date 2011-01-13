@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   
   def code_image
     image = NoisyImage.new(4)
-    session[:code] = image.code
+    session[:code_image] = image.code
     send_data image.code_image, :type => 'image/jpeg', :disposition => 'inline'
   end
   

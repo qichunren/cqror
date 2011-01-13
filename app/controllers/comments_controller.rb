@@ -10,12 +10,12 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build params[:comment]
     @comment.user_ip = request.remote_ip
     
-      if @comment.save
-        flash[:notice] = "Successfully comment..."
-        redirect_to "/myblog/#{@post.to_param}"
-      else                                                   
-        render :text => "请输入必填项。#{@comment.errors.inspect}" and return
-      end
+    if @comment.save
+      flash[:notice] = "Successfully comment..."
+      redirect_to "/myblog/#{@post.to_param}"
+    else                                                   
+      render :text => "请输入必填项。#{@comment.errors.inspect}" and return
+    end
   end
 
 
