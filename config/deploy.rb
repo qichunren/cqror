@@ -4,7 +4,7 @@ set :repository,  "qichunren@109.74.204.219:/home/qichunren/repos/cqror.git"
 set :scm, :git
 set :deploy_to, "/home/qichunren/www/cqror"
 set :user, "qichunren"
-set :password, "qichunren"
+set :password, "caojinhua8"
 set :use_sudo, false
 default_run_options[:pty] = true
 
