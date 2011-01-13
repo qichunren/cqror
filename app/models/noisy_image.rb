@@ -29,7 +29,7 @@ class NoisyImage
       }
       cur += 18
     }
-    @code=code_array.to_s
+    @code=code_array.join.to_s
     @code_image = canvas.to_blob{
       self.format="JPG"
     }
