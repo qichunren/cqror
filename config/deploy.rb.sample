@@ -1,16 +1,16 @@
 set :application, "cqror.com's rails code"
-set :repository,  "qichunren@109.74.204.219:/home/qichunren/repos/cqror.git"
+set :repository,  "qichunren@xx.xx.xx.xx:/home/qichunren/repos/cqror.git"
 
 set :scm, :git
 set :deploy_to, "/home/qichunren/www/cqror"
-set :user, "qichunren"
-set :password, "caojinhua8"
+set :user, "hellokity"
+set :password, "secretxxx"
 set :use_sudo, false
 default_run_options[:pty] = true
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "109.74.204.219", :app, :web, :db, :primary => true
+server "xx.xx.xx.xx", :app, :web, :db, :primary => true
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
